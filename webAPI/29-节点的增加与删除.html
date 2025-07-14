@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+    </ul>
+    <script>
+        // 增加节点
+        // 创建节点-----插入节点
+        // 1.创建节点
+        // 即创建出一个新的网页元素，再添加到网页内
+        // 创建一个新的元素节点
+        // document.createElement('标签名')
+        // const list=document.createElement('li')
+        // console.log(list)
+
+        // 2.追加节点
+        // 要想在界面中看到，还需要插入到某个父元素中
+        // 父元素.appendChild(要插入的元素)   插入到父元素的最后一个子元素
+        // const ul=document.querySelector('ul')
+        // ul.appendChild(list)
+        // list.innerHTML='我是li'
+
+        // 父元素.insertBefore(要插入的元素,在那个元素前面)  插入到某个子元素前面，若第二个参数为null，则将被插入到节点的子节点列表末尾。
+        // const ul = document.querySelector('ul')
+        // const broder=document.querySelector('ul li')
+        // list.innerHTML='我才是1'
+        // ul.insertBefore(list,ul.children[0])
+
+        // 3.克隆节点
+        // 元素.cloneNode(布尔值)
+        // cloneNode会克隆出一个跟原标签一摸一样的元素，括号内传入布尔值
+        // 若为true，则代表克隆时会包含后代节点一起克隆
+        // 若为false，则代表克隆时不包含后代节点
+        // 默认值为false
+
+        //  复制一个原有的节点，把节点放入到指定元素内部
+        // const li=document.querySelector('ul li:first-child')
+        // // console.log(li)
+        // const newli=li.cloneNode(true)
+        // // 或 const newli=ul.children[0].cloneNode(true)
+        // const ul=document.querySelector('ul')
+        // ul.appendChild(newli)
+
+        // 4.删除节点
+        // 要删除元素必须通过父元素删除
+        // 父元素.removeChild(要删除的元素)
+        // const ul=document.querySelector('ul')
+        // ul.removeChild(ul.children[0])
+        
+
+
+        
+    </script>
+</body>
+
+</html>

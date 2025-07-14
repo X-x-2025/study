@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 100px;
+        height: 100px;
+    }
+    #pi{
+        width: 100px;
+        height: 100px;
+    }
+</style>
+<body>
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+    <div class="box">box3</div>
+    <p id="p1">p1</p>
+    <ul>
+        <li>列表1</li>
+        <li>列表2</li>
+        <li>列表3</li>
+    </ul>
+
+    <script>
+        // document.querySelector()选择匹配的第一个元素
+        // 该方法返回的是伪数组
+
+        // 使用方法一
+        // const box=document.querySelector('div')
+        // console.log(box)
+        // const nav = document.querySelector('p')
+        // console.log(nav)
+
+        // 使用方法二
+        // const box = document.querySelector('.box')
+        // console.log(box)
+        // const nav = document.querySelector('#p1')
+        // console.log(nav)
+
+        // 使用方法三
+        // const list=document.querySelector('ul li:first-child')
+        // console.log(list)
+        
+        // document.querySelectorAll()选择所有匹配的元素
+        // 该方法返回的是伪数组
+        // 伪数组：
+        // 有长度有索引号，但不能用数组方法，如（pop()）
+        // const list=document.querySelectorAll('ul li')
+        // console.log(list)
+
+        // 对DOM元素进行操作
+
+        // 对一个DOM元素进行操作
+        // const box = document.querySelector('div')
+        // console.log(box)
+        // box.style.backgroundColor='blue'
+
+        // 对多个DOM元素进行操作
+        // const list = document.querySelectorAll('ul li')
+        // console.log(list)
+        // for(let i=0;i<list.length;i++){
+        //     list[i].style.color='red'
+        //     console.log(list[i])
+        // }
+
+        // document.getElementsByClassName()根据类名获取元素     
+        // const classname=document.getElementsByClassName('box')
+        // console.log(classname)  获取页面所有类名为box的标签
+
+        
+        
+
+
+        
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 元字符
+        // 是具有特殊含义的字符，可以极大提高了灵活性和强大的匹配功能
+
+        // 1.边界符
+        // 边界符     说明
+        // ^          表示匹配首行的文本（以谁开始）
+        // $          表示匹配行尾的文本（以谁结束）
+        // 如果^和%在一起，表示必须是精确匹配
+        console.log(/哈/.test('哈'))  //true
+        console.log(/^哈/.test('哈哈'))  //true
+        console.log(/哈$/.test('哈哈'))  //true
+        console.log(/^哈$/.test('哈哈'))  //false
+        console.log(/^哈$/.test('哈'))  //true
+        console.log('------------------')
+
+        // 2.量词
+        // 量词     说明
+        // *        重复0次或更多次
+        // +        重复1次或更多次
+        // ?        重复0次或1次
+        // {n}      重复n次
+        // {n,}     重复n次或更多次
+        // {n,m}    重复n到m次
+
+        // 量词 *类似  >=0
+        console.log(/^哈*$/.test('哈'))  //true
+        console.log(/^哈*$/.test('哈哈'))  //true
+        console.log(/^哈*$/.test('哈呵哈'))  //false
+        console.log(/^哈*$/.test(''))  //true
+        console.log('------------------')
+
+        // 量词 + 类似 >= 1
+        console.log(/^哈+$/.test(''))  //false
+        console.log(/^哈+$/.test('哈'))  //true
+        console.log(/^哈+$/.test('哈哈'))  //true
+        console.log(/^哈+$/.test('哈呵哈'))  //false
+        console.log('------------------')
+
+        // 量词 ? 类似 0||1
+        console.log(/^哈?$/.test(''))  //true
+        console.log(/^哈?$/.test('哈'))  //true
+        console.log(/^哈?$/.test('哈哈'))  //false
+        console.log(/^哈?$/.test('哈呵哈'))  //false
+        console.log('------------------')
+
+        // 量词 {n}  n等于几，就必须出现几次
+        console.log(/^哈{3}$/.test('哈哈哈'))  //true
+        console.log(/^哈{3}$/.test('哈哈'))  //false
+        console.log('------------------')
+        
+        // 量词 {n,}  >=n次
+        console.log(/^哈{3,}$/.test('哈哈哈'))  //true
+        console.log(/^哈{3,}$/.test('哈哈哈哈'))  //true
+        console.log(/^哈{3,}$/.test('哈哈'))  //false
+        console.log('------------------')
+
+         // 量词 {n,m}  >=n&&<=m
+        console.log(/^哈{3,5}$/.test('哈哈哈'))  //true
+        console.log(/^哈{3,5}$/.test('哈哈哈哈哈哈'))  //false
+        console.log(/^哈{3,5}$/.test('哈哈'))  //false
+        console.log('------------------')
+
+        // 3.字符类
+        // [ ]匹配字符集合
+        // 只要字符串中包含了[]中的任意一个字符，都返回true
+        console.log(/[abc]/.test('application'))  //true
+        console.log(/[abc]/.test('black'))        //true
+        console.log(/[abc]/.test('fly'))          //false
+        console.log(/[a-z]/.test('fly'))          //true
+        console.log(/[a-z]{3}/.test('fly'))       //true
+        console.log(/^[a-z]{3}$/.test('fly'))     //true
+        console.log(/^[A-Z]{3}$/.test('fly'))     //false
+        console.log(/^[0-9]{3}$/.test('123'))     //true
+        console.log(/[a-zA-Z0-9]/.test('B'))      //true
+        // QQ号：^ [1 - 9][0 - 9]{ 5,}$
+        console.log('------------------')
+        // 在[]内加^表示取反   如
+        console.log(/[^a-z]/.test('A'))           //true
+        console.log(/[^a-z]/.test('a'))           //false
+        console.log('------------------')
+        // 表示匹配除了小写字母以外的字符
+
+        // 4.预定义
+        // 预定类         说明
+        // \d             匹配0-9之间的任一数字，相当于[0-9]
+        // \D             匹配所有0-9以外的字符，相当于[^0-9]
+        // \w             匹配任意的字母、数字和下划线，相当于[A-Za-z0-9]
+        // \W             除所有字母、数字和下划线以外的字符，相当于[^A-Za-z0-9]
+        // \s             匹配空格（包括换行符、制表符、空格符等），相当于[\t\r\n\v\f]
+        // \S             匹配非空格字符，相当于[^\t\r\n\v\f]
+
+        // 5.修饰符
+        // 修饰符约束正则表达式执行的某些细节行为，如是否区分大小写、是否支持多行匹配等
+        // 语法： /表达式/修饰符
+        // i是单词ignore的缩写，正则匹配时字母不区分大小写
+        // g是单词global的缩写，匹配所有满足正则表达式的结果
+        console.log(/^java$/.test('java'))    //true
+        console.log(/^java$/.test('JAVA'))    //false
+        console.log(/^java$/i.test('JAVA'))   //true
+        // 替换replace   类似 ctrl+h
+        // 字符串.replace(/正则表达式/,'替换的文本')
+        const str='c是一门编程语言，学会c工资很高'
+        
+        console.log(str.replace(/c/ig, 'java'))
+        
+
+        
+        
+     
+
+
+        
+        
+        
+
+
+
+
+
+        
+    </script>
+</body>
+</html>

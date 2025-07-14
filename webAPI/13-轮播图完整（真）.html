@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .slider {
+        width: 560px;
+        height: 400px;
+        overflow: hidden;
+    }
+
+    .slider-wrapper img {
+        width: 4000px;
+        height: 300px;
+        display: block;
+    }
+
+    .slider-footer {
+        height: 80px;
+        background-color: aquamarine;
+        position: relative;
+    }
+
+    .slider-footer .toggle {
+        position: absolute;
+        right: 0;
+        top: 12px;
+        display: flex;
+    }
+
+    .slider-footer .toggle button {
+        margin-left: 12px;
+        width: 28px;
+        height: 28px;
+        appearance: none;
+        border: none;
+        background: rgba(201, 38, 38, 0.2);
+        color: aqua;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .slider-footer .toggle button:hover {
+        background: rgba(193, 137, 137, 0.4);
+    }
+
+    .slider-footer p {
+        margin: 0;
+        font-size: 18px;
+        color: black;
+        margin-bottom: 10px;
+    }
+
+    .slider-indicator {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .slider-indicator li {
+        width: 8px;
+        height: 8px;
+        margin: 4px;
+        border-radius: 50%;
+        background: #fff;
+        opacity: 0.4;
+        cursor: pointer;
+    }
+
+    .slider-indicator li.active {
+        width: 12px;
+        height: 12px;
+        opacity: 1;
+    }
+
+    /* .active{
+        width: 12px;
+        height: 12px;
+        opacity: 1;
+    } */
+</style>
+
+<body>
+    <div class="slider">
+        <div class="slider-wrapper">
+            <img src="../作业（超链接）/华山水墨画.jpg" alt="">
+        </div>
+        <div class="slider-footer">
+            <p>华山</p>
+            <ul class="slider-indicator">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="toggle">
+                <button class="left">&lt;</button>
+                <button class="right">&gt;</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const arrdata = [
+            { url: '../作业（超链接）/华山水墨画.jpg', title: '华山', color: 'rgb(255,1,1)' },
+            { url: '../作业（超链接）/恒山水墨画.jpg', title: '恒山', color: 'rgb(1,255,1)' },
+            { url: '../作业（超链接）/衡山水墨画.jpg', title: '衡山', color: 'rgb(1,1,255)' },
+            { url: '../作业（超链接）/嵩山水墨画.jpg', title: '嵩山', color: 'rgb(255,255,1)' },
+            { url: '../作业（超链接）/泰山水墨画.webp', title: '泰山', color: 'rgb(255,1,255)' }
+        ]
+        // 获取DOM元素
+        const bgimg = document.querySelector('.slider-wrapper img')
+        const p = document.querySelector('.slider-footer p')
+        const color = document.querySelector('.slider-footer')
+        const left=document.querySelector('.left')
+        const right=document.querySelector('.right')
+        // 定时器
+        let i = 0
+        // let timerID= setInterval(function () {
+        //     i++
+        //     // 衔接
+        //     if (i >= arrdata.length) {
+        //         i = 0
+        //     }
+        //     // 更改图片
+        //     bgimg.src = arrdata[i].url
+        //     // 更改文字
+        //     p.innerHTML = arrdata[i].title
+        //     // 更改颜色
+        //     color.style.backgroundColor = arrdata[i].color
+        //     // 更改圆点
+        //     document.querySelector('.slider-indicator .active').classList.remove('active')
+        //     document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.add('active')
+        // }, 1000)
+        // // 按钮
+        right.addEventListener('click', function () {
+            // clearInterval(timerID)
+            i++
+            // 判断条件   i先自加
+             if (i >= arrdata.length ) {
+                i = 0
+            }
+            // 调用函数
+            changedata()
+            // // 更改数据
+            // bgimg.src=arrdata[i].url
+            // p.innerHTML = arrdata[i].title
+            // color.style.backgroundColor = arrdata[i].color
+            // // 更改圆点 思如：先移除原来的active  再添加当前的active
+            // document.querySelector('.slider-indicator .active').classList.remove('active')
+            // document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.add('active')
+           
+            })
+            console.log(arrdata.length)
+            
+        left.addEventListener('click',function(){
+            i--
+            // 判断条件
+             if (i < 0) {
+                i = arrdata.length-1
+            }
+            // 调用函数
+            changedata()
+            // // 更改数据
+            // bgimg.src = arrdata[i].url
+            // p.innerHTML = arrdata[i].title
+            // color.style.backgroundColor = arrdata[i].color
+            // document.querySelector('.slider-indicator .active').classList.remove('active')
+            // document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.add('active')
+        })
+        // 可封转一个函数专门修改数据
+        function changedata(){
+            bgimg.src = arrdata[i].url
+            p.innerHTML = arrdata[i].title
+            color.style.backgroundColor = arrdata[i].color
+            document.querySelector('.slider-indicator .active').classList.remove('active')
+            document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.add('active')
+
+        }
+        // 自动播放模块
+        // 定时器
+        let  timerID=setInterval(function(){
+            // 利用js自动调用点击事件
+            right.click()
+        },1000)
+        // 鼠标经过大盒子定时器停止
+        const slider=document.querySelector('.slider')
+        slider.addEventListener('mouseenter',function(){
+            // 停止定时器
+            clearInterval(timerID)
+
+        })
+        // 鼠标离开大盒子定时器启动
+         slider.addEventListener('mouseleave', function () {
+            // 停止定时器
+                clearInterval(timerID)
+                // 开启定时器
+                  timerID = setInterval(function () {
+                 // 利用js自动调用点击事件
+                 right.click()
+             }, 1000)
+
+            })
+
+
+
+
+    </script>
+</body>
+</html>

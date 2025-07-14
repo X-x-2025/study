@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 本地存储
+        // 本地存储只能存储字符串
+        // 本地存储分类
+        // localStorage
+        // 作用：可以将数据永久存储在本地（用户的电脑），除非手动删除，否则关闭页面也会存在
+        // 特征：可以多个窗口（页面）共享（同一浏览器可以共享）
+        // 以键值对的形式存储使用
+
+        // 存储数据/修改数据
+        // localStorage.setItem(key,value)
+        localStorage.setItem('age','18')
+
+        // 获取数据
+        // localStorage.getItem(key)
+        localStorage.getItem('age')
+        console.log(localStorage.getItem('age'))
+
+        // 删除数据
+        // localStorage.removeItem(key)
+        localStorage.removeItem('age')
+
+        // sessionStorage
+        // 生命周期为关闭浏览器窗口
+        // 用法和localStorage基本相同
+        
+
+
+    </script>
+</body>
+</html>

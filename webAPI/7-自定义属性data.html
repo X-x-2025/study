@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div data-id="1" data-tx="文本">1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        const box=document.querySelector('div')
+        // 在DOM元素上一律以  dataset对象方式获取
+        console.log(box.dataset)
+        console.log(box.dataset.id)
+        
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: bisque;
+            border: 5px solid red;
+            padding: 5px;
+        }
+    </style>
+</head>
+<div></div>
+<body>
+    <script>
+        // resize  浏览器窗口大小发生变化的时候触发的事件
+        // window.addEventListener('resize',function(){
+        //     console.log('窗口发生变化了')
+        // })
+
+        // 获取元素宽高
+
+        // clientWidth和clientHeight
+        // 获取元素的可见部分宽高（不包含边框，margin，滚动条等）
+        const box=document.querySelector('div')
+        // 获取元素的高
+        console.log(box.clientHeight)
+
+        // offsetWidth和offsetHeight
+        // 获取元素的自身宽高，包含元素自身设置的宽高、padding、border
+        // 注意：获取的是可视宽高，如果盒子是隐藏的，获取的结果是0
+        console.log(box.offsetHeight)
+        
+        
+
+    </script>
+</body>
+</html>

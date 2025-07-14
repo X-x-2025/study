@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>一等奖是<span>？？？</span></h1>
+    <h2>二等奖是<span>？？？</span></h2>
+    <h3>三等奖是<span>？？？</span></h3>
+   
+    <script>
+        const awards = ['小明', '小红', '小蓝']
+        function getawards(){
+        const random=Math.floor(Math.random()*awards.length)
+        const selected=awards[random]
+        awards.splice(random,1)
+        return selected
+        }
+        let a=getawards()
+        console.log(a)
+        const one=document.querySelector('h1 span')
+        one.innerHTML=a
+         
+        let b = getawards()
+        console.log(b)
+        const two = document.querySelector('h2 span')
+        two.innerHTML = b
+       
+
+        let c = getawards()
+        console.log(c)
+        const three = document.querySelector('h3 span')
+        three.innerHTML = c
+       
+        
+        
+        
+        
+    </script>
+</body>
+</html>

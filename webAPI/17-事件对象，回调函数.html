@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text">
+    
+    <!-- <button>点击</button> -->
+   
+    <script>
+        // 回调函数：当一个函数当做参数来传递给另外一个函数的时候，这个函数就是回调函数
+        // function fn(){
+        //     console.log('我是回调函数')
+        // }
+        // const btn=document.querySelector('button')
+        // fn作为参数传递给了setInterval，故fn就是回调函数
+        // setInterval(fn,1000)
+        // btn.addEventListener('click',function(){
+        //     // 其中的匿名函数也是回调函数
+        //     console.log('我是回调函数')
+        // })
+
+        // 事件对象:也是个对象，这个对象里有触发事件时的相关信息
+        // 在绑定的回调函数的第一个参数就是事件对象
+        // 一般命名为：e，evt ，event
+        // 部分常用属性
+        // type：获取当前的事件类型
+        // clientX/clientY:获取光标时相对于浏览器可见窗口左上角的位置
+        // offsetX/offsetY:获取光标时相当于当前DOM元素左上角的位置
+        // key:用户按下的键盘键的值
+        // const btn = document.querySelector('button')
+        // btn.addEventListener('click',function(evt){
+        //     console.log(evt)
+        // })
+        const input=document.querySelector('input')
+        input.addEventListener('keyup',function(evt){
+            // 控制台打印键盘按下的值
+            console.log(evt.key)
+            
+        })
+
+    </script>
+</body>
+</html>

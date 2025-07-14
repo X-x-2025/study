@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="" id="" cols="30" rows="10">
+        用户协议
+        *********************************************
+        *********************************************
+        *********************************************
+    </textarea>
+    <br>
+    <button class="btn">我已阅读用户协议(3)</button>
+    <script>
+        const btn=document.querySelector('.btn')
+        btn.disabled=true
+        // 倒计时
+        let i=3
+        setInterval(function(){
+            i--
+            btn.innerHTML=`我已阅读用户协议(${i})`
+            if(i==0){
+                clearInterval(1)
+                btn.disabled=false
+                btn.innerHTML = '同意'
+            }
+        },1000)
+    </script>
+</body>
+</html>

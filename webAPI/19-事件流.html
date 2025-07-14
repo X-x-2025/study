@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .father{
+        width: 500px;
+        height: 500px;
+        background-color: bisque;
+    }
+    .son{
+        width: 200px;
+        height: 200px;
+        background-color: rgb(247, 149, 30);
+    }
+</style>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+
+    <script>
+        // 事件流指的是事件完整执行过程中的流动程序
+        // 事件流：分为捕获阶段和冒泡阶段
+        // 捕获阶段是从父到子
+        // 冒泡阶段是从子到父
+        const father=document.querySelector('.father')
+        const son=document.querySelector('.son')
+        // DOM.addEventListener(事件类型，事件处理函数，是否使用捕获机制（布尔类型）)
+        // addEventListener第三个参数传入true代表是捕获阶段触发
+        // 若传入的是false代表冒泡阶段触发，默认值为false
+
+        // 事件冒泡
+        // 即当一个元素的事件被触发时，同样的事件将会在该元素的所有祖先元素中依次被触发
+        // 简单理解：当一个元素事件触发后，会依次向上调用所有父级元素的同名事件
+        // 事件冒泡是默认存在的
+        document.addEventListener('click',function(){
+            alert('我是爷爷')
+        },false)
+        father.addEventListener('click', function () {
+            alert('我是爸爸')
+        },false)
+        son.addEventListener('click', function (evt) {
+            alert('我是儿子')
+            evt.stopPropagation()
+        },false)
+
+        // 阻止冒泡
+        // 语法：事件对象.stopPropagation()
+        // 此方法可以阻断事件流动，既能阻止捕获，又能阻止冒泡
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        padding-top: 1px;
+        height: 1200px;
+    }
+    .box{
+        margin: 180px;
+        background-color: bisque;
+        width: 150px;
+        height: 200px;
+        overflow: scroll;
+    }
+</style>
+<body>
+    <div class="box">
+        我是文字我是文字我是文字我是文字
+        我是文字我是文字我是文字我是文字
+        我是文字我是文字我是文字我是文字
+        我是文字我是文字我是文字我是文字
+        我是文字我是文字我是文字我是文字
+        我是文字我是文字我是文字我是文字
+
+    </div>
+    <script>
+        // 滚动事件
+        // 事件名：scroll
+        // 页面滚动事件
+        // 给window或documeng添加scroll事件
+        // window.addEventListener('scroll',function(){
+        //     console.log('滚动了')
+        // })
+
+        // 获取滚动的大小
+        // scrollLeft和scrollTop属性
+        // 作用是获取元素内容往左，往上滚动看不到的距离
+        // 这两个值是可以读写的
+        const box=document.querySelector('.box')
+        // box.addEventListener('scroll',function(){
+        //     console.log(box.scrollTop)
+        // })
+
+        // 获取页面滚动了多少像素
+        // n也可以赋值
+        // 例
+        // 页面初始位置滚动了800
+        // document.documentElement.scrollTop=800
+        window.addEventListener('scroll',function(){
+            // 获取html元素写法
+            // console.log(document.documentElement.scrollTop)
+            let n=document.documentElement.scrollTop
+            // 其中n是数字类型 不带单位
+            if(n>=100){
+                box.style.display='block'
+            }
+            else{
+                box.style.display='none'
+            }
+
+        })
+
+    </script>
+</body>
+</html>

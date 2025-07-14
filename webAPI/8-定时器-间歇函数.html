@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function timer(){
+            console.log('一秒打印一次');
+            
+        }
+        // 开启定时器
+        // setInterval(函数,间隔时间)
+        // 间歇时间单位为毫秒  一秒等于1000毫秒
+        // setInterval(function(){
+        //     console.log('一秒执行一次')
+        // },1000)
+        // setInterval(timer,1000)
+        // 查询定定时器的ID
+        let intervalId= setInterval(timer, 1000)
+        console.log(intervalId)
+        // 关闭定时器
+        // clearInterval(定时器ID)
+        // 或clearInterval(变量名)
+        clearInterval(1)
+    </script>
+</body>
+</html>

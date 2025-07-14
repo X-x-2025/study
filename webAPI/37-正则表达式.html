@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    // 正则表达式
+    // 正则表达式是用于匹配字符串中字符组合的模式
+    // 通常用来查找、替换哪些符合正则表达式的文本，许多语言都支持正则表达式
+    const str='正则表达式是用于匹配字符串中字符组合的模式'
+    // 1.定义规则
+    // 定义正则表达式语法
+    // const 变量名=/表达式/
+    // 其中/ /是正则表达式字面量
+    const reg=/正则表达式/
+
+    // 2.查找
+    // 判断是否有符合规则的字符串
+    // text()方法   用来查看正则表达式与指定字符串是否匹配
+    // 语法： 定义的规则.text(被检测的字符串)
+    // 若匹配则返回true，否则返回false
+    reg.test(str)
+    console.log(reg.test(str))  //true
+
+    // exec()方法  在一个指定的字符串中执行一个搜索匹配
+    // 语法：  定义的规则.exec(被检测的字符串)
+    // 若匹配成功则返回一个数组，否则返回null
+    reg.exec(str)
+    console.log(reg.exec(str))
+    
+    
+
+   </script>
+</body>
+</html>
