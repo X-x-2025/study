@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table{
+        width: 600px;
+        text-align:center;
+    }
+    table,th,td{
+        border: 1px solid wheat;
+        border-collapse: collapse;
+    }
+    caption{
+        font-size: 18px;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+    tr{
+        height: 40xp;
+        cursor: pointer;
+    }
+    table tr:nth-child(1){
+        background-color: azure;
+
+    }
+    table tr:not(:first-child):hover{
+        background-color: rgb(166, 228, 228);
+    }
+</style>
+<body>
+    <caption>学生列表</caption>
+    <table>
+    <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+    </tr>
+    <!-- <tr>
+        <th>1</th>
+        <th>小明</th>
+        <th>18</th>
+        <th>男</th>
+    </tr> -->
+    
+    <script>
+        let students=[
+            {name:  '小明', age: 18, gender: '男' },
+            { name: '小红', age: 18, gender: '男' },
+            { name: '小白', age: 18, gender: '男' },
+            { name: '小黑', age: 18, gender: '男' }
+        ]
+        for(let i=0;i<students.length;i++){
+            document.write(`<tr>
+                <th>${i}</th>
+                <th>${students[i].name}</th>
+                <th>${students[i].age}</th>
+                <th>${students[i].gender}</th>
+            </tr>`
+        )
+            
+        }
+    </script>
+    </table>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 正则表达式
+        // 步骤
+        // 1.定义规则
+        // 2.查找
+        // 定义正则表达式语法：
+        // const 变量名 = / 表达式 /
+        // 其中/ /是正则表达式字面量
+
+        // 例如：
+        // 定义规则
+        let str = '我是谁,我在哪里'
+        const reg = /我/
+        // 判断是否有符合规则的字符串
+        // text()方法   语法：规则.text(被检查的字符串)  用来查看正则表达式与指定字符串是否匹配
+        // console.log(reg.test(str));
+        // 如果正则表达式与指定字符串匹配，返回true，否则返回false
+
+
+        // exec()方法   语法：规则.exec(被检查的字符串)  在指定字符串中执行一个匹配搜索
+        // 例如：
+        console.log(reg.exec(str));
+        // 如果匹配成功，exec()方法返回一个数组，否则返回null
+        
+
+       
+
+
+
+        
+    </script>
+</body>
+</html>

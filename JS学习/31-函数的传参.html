@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 求start-end的累加和
+        let num1=+prompt('请输入第一个数')
+        let num2 = +prompt('请输入第二个数')
+        function getSum(start,end){
+            // function getSum(start=0,end=0)设置形参默认值
+            let sum=0
+            for(let i=start; i<=end; i++){
+               
+               sum+=i
+
+
+            }
+            console.log(sum)
+        }
+        getSum(num1,num2)
+    </script>
+</body>
+</html>

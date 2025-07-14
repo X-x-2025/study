@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        tr{
+        }
+       h2{
+        text-align: center;
+       }
+       tr,td{
+        border: 1px solid black;
+        text-align: center;}
+        table{
+            border-collapse: collapse;
+            margin: 0 auto;
+            
+        }
+    </style>
+</head>
+<body>
+    <h2>定单确认</h2>
+    
+    <script>
+        let jiage=+prompt('请输入商品的价格')
+        let shuliang=+prompt('请输入商品的数量')
+        let total=jiage*shuliang
+        let dizhi=prompt('请输入收货地址')
+       document.write(`
+       (<table>
+            <tr>
+                <th>商品名称</th>
+                <th>商品价格</th>
+                <th>商品数量</th>
+                <th>总价</th>
+                <th>收货住址</th>
+            </tr>
+            <tr>
+                <th>华为mate60</th>
+                <th>${jiage}元</th>
+                <th>${shuliang}</th>
+                <th>${total}元</th>
+                <th>${dizhi}</th>
+            </tr>
+        </table>
+`)
+       
+        
+
+
+    </script>
+</body>
+</html>

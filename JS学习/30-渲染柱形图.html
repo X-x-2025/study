@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #big{
+        display: flex;
+        width: 700px;
+        height: 300px;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+        margin: 50px auto;
+        justify-content: space-around;
+        align-items: flex-end;
+        text-align: center;
+
+    }
+    .box{
+        display: flex;
+        width: 50px;
+        background-color: rgb(218, 82, 82);
+        flex-direction: column;
+        justify-content: space-between;
+        
+    }
+    span{
+        margin-top: -20px;
+    }
+    h4{
+        margin-bottom: -35px;
+        width: 70px;
+        margin-left: -10px;
+    }
+</style>
+<body>
+    <!-- <div id="big" >
+        <div class="box" style="height: 123px;">
+            <span>123</span>
+            <h4>第一季度</h4>
+        </div>
+         <div class="box" style="height: 123px;">
+            <span>123</span>
+            <h4>第二季度</h4>
+        </div>
+        <div class="box" style="height: 123px;">
+            <span>123</span>
+            <h4>第三季度</h4>
+        </div>
+        <div class="box" style="height: 123px;">
+            <span>123</span>
+            <h4>第四季度</h4>
+        </div>
+  
+    </div> -->
+    <script>
+        
+        let arr=[]
+        document.write(` <div id="big" >`)
+            for (let i = 1; i <= 4; i++) {
+                let num=prompt('请输入数据')
+                arr.push(num)
+                // arr.push(prompt('请输入数据'))
+        document.write(`
+        <div class="box" style="height: ${arr[i-1]}px;">
+            <span>${arr[i-1]}</span>
+            <h4>第${i}季度</h4>
+        </div>
+        `)}
+         
+        document.write(`</div>`)
+        
+    </script>
+</body>
+</html>
