@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 对象解构
+        // 对象解构是将对象属性和方法快速批量赋值给一系列变量的简洁语法
+        // const obj={
+        //     uname:'小明',
+        //     age:18
+        // }
+        // const {uname,age}={uname: '小明',age: 18}
+        // 等价于const uname=obj.uname
+        // 对象属性的值将被赋值给与属性名相同的变量
+        // 注意：解构的变量名不要和外面的变量名冲突,否则会报错
+        // console.log(uname)
+        // console.log(age)
+        // 对象解构的变量名 可以重新改名  旧变量名:新变量名
+        // const { uname:username, age:userage } = { uname: '小明', age: 18 }
+        // console.log(username)
+        // console.log(userage)
+
+        // 数组对象的解构
+        // const goods=[{uname:'小米',type:'手机'}]
+        // const [{uname:username,type}]=goods
+        // console.log(username)
+        // console.log(type)
+
+        // 多级对象解构
+        const obj={
+            name:'数码产品',
+            type:{
+                computer:'华为',
+                phone:'小米'
+            }
+        }
+        const {name:username,type:{computer,phone}}=obj
+        console.log(username)
+        console.log(computer)
+        console.log(phone)
+        
+        
+        
+
+         
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 动态参数
+        // arguments是函数内置的伪数组变量，它包含了调用函数时传入的所有实参
+        // 总结：
+        // 1.arguments是一个伪数组，只存在于函数中
+        // 2.arguments的作用是动态获取函数的实参
+        // 3.可以通过for循环依次得到传递过来的实参
+        // function getsum(){
+        //     let sum=0
+        //     for(let i=0;i<arguments.length;i++){
+        //         sum=sum+arguments[i]
+        //     }
+        //     console.log(sum)
+        // }
+        // getsum(1, 2, 3, 4, 5)
+
+        // 剩余参数
+        // 剩余参数允许我们将一个不定数量的参数表示为一个数组,只存在函数中
+        // ...是语法符号，置于最末函数形参之前，用于获取多余的实参
+        // 借助...获取的剩余实参，是个真数组
+        // 例
+        function getsum(...arr){
+            // console.log(arr)
+            let sum=0
+            for(let i=0;i<arr.length;i++){
+                sum+=arr[i]
+            }
+            console.log(sum)
+        }
+        getsum(1,2,3,4,5)
+
+        // 展开运算符
+        // ...可以将一个数组展开,且不会修改原数组
+        // 用法如下
+        // 1.求数组最值
+        const arr=[1,2,3]
+        // console.log(Math.max(1,2,3))
+        // ...arr===1,2,3
+        console.log(Math.max(...arr))
+        // 2.合并数组
+        const arr1=[4,5,6]
+        const newarr=[...arr,...arr1]
+        console.log(newarr)
+        
+        
+        
+        
+        
+
+    </script>
+</body>
+</html>

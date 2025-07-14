@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Javascript中最主要的数据类型有6种
+        // 基本数据类型
+        // 字符串、数值、布尔、underfinded、null
+        // 引用数据类型
+        // 对象
+        // 在js底层，把简单数据类型包装成了引用数据类型
+
+        // 内置构造函数
+        // 引用类型
+        // Object、Array、RegExp、Date等
+        // 包装类型
+        // String、Number、Boolean等
+
+        // Object
+        // Object是内置的构造函数，用于创建普通对象
+        // 三个常用的静态方法（静态方法就是只有构造函数Object可以调用的）
+        // 1.Object.keys
+        // 作用：Object.keys可以获取对象中的所有属性名（键）
+        // 例如：
+        const Person = {name:'张三',age:18,gender:'男' }
+        const arr = Object.keys(Person)
+        console.log(arr);     //['name', 'age', 'gender']
+        // 注意：返回的是一个数组
+
+        // 2.Object.values
+        // 作用：Object.keys可以获取对象中的所有属性值（值）
+        // 例如：
+        const arr1 = Object.values(Person)
+        console.log(arr1);
+        // 注意：返回的也是一个数组
+
+        // 3.Object.assign
+        // 作用：用于拷贝对象
+        // 例如：
+        const newobj = {}
+        Object.assign(newobj,Person)
+        console.log(newobj);
+        // 可用于添加属性，例如
+        Object.assign(newobj,{hight:180})
+        console.log(newobj);
+        
+        
+
+
+        
+
+
+
+
+
+    </script>
+</body>
+</html>

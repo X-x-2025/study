@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 构造函数
+        // 构造函数：是一种特殊的函数，主要用来初始化对象
+        // 约定：1.命名的首字母大写
+        //      2.它们只能有“new” 操作符来执行
+
+        function Pig(uname,age){
+            this.uname=uname
+            this.age=age
+        }
+       console.log(new Pig('peiqi', 18))
+       const pig= new Pig('qiaoz', 18)
+       console.log(pig)
+    // 说明：
+    // 1.创建新的空对象
+    // 2.构造函数this指向新对象
+    // 3.执行构造函数代码，修改this，添加新属性
+    // 4.返回新对象
+
+    // 实例成员
+    // 通过构造函数创建的对象称为实例对象，实例对象中的属性和方法称为实例成员
+    
+    // 静态成员
+    // 构造函数的属性和方法称为静态成员
+       
+       
+    </script>
+</body>
+</html>

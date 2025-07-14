@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组解构
+        // 数组解构是将数组的单元值快速批量给一系列变量的简洁语法
+        // const arr=[1,2,3]
+        // const [one,two,three]=arr
+
+        const [one,two,three]=[1,2,3]
+        console.log(one)
+        console.log(two)
+        console.log(three)
+        
+        // 交换变量的值
+        // let a=1
+        // let b=2
+        // ;[a,b]=[b,a]  //要加分号
+        // console.log(a,b)
+
+        // 变量少,单元值多 用剩余参数解决
+        // const [a,b,c,...newarr]=[1,2,3,4,5]
+        // console.log(a)        //1
+        // console.log(b)        //2
+        // console.log(c)        //3
+        // console.log(newarr)   //[4,5]
+        // newarr返回的是一个数组
+
+        // 变量少,单元值多 用剩余参数解决
+        // const [a, b, c,d,e,f] = [1, 2, 3, 4, 5]
+        // console.log(a)        //1
+        // console.log(b)        //2
+        // console.log(c)        //3
+        // console.log(d)        //4
+        // console.log(e)        //5
+        // console.log(f)        //undefined
+
+        // 设置默认值
+        // const [a=0,b=0]=[]
+        // console.log(a)        //0
+        // console.log(b)        //0
+
+        // 多维数组的处理
+        // const [a,b,[c,d]]=[1,2,[3,4]]
+        // console.log(a)        //1
+        // console.log(b)        //2
+        // console.log(c)        //3
+        // console.log(d)        //4
+        
+
+        
+    </script>
+</body>
+</html>
