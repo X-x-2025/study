@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p v-if="gender===1">男</p>
+        <p v-else>女</p>
+        <hr>
+        <p v-if="time<10">步行</p>
+        <p v-else-if="time>10">自行车</p>
+        <p v-else-if="time>20">公交车</p>
+        <p v-else>地铁</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+            // v-if
+            // 1.作用：控制元素显示隐藏(条件渲染)
+            // 2.语法：v-if = "表达式"  表达式值true显示，false隐藏
+            // 3.原理：基于条件判断，是否创建或移除元素节点
+            // 4.场景：要么显示，要么隐藏，不频繁切换的场景
+            
+            // v-else
+            // 1.作用：辅助v-if进行渲染
+            // 2.语法：v-else  v-if-else = "表达式"
+            // 3.注意：需要紧挨着v-if一起使用
+
+            // 例如：
+     const app = new Vue({
+            el:'#app',
+            data:{
+                gender :1,
+                time : 60
+            }
+        })
+    </script>
+</body>
+</html>

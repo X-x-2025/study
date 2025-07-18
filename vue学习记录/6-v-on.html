@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- <style>
+    .app{
+        width: auto;
+        height: auto;
+    }
+</style> -->
+<body>
+    <div class="app">
+    <button v-on:click="count++">+</button>
+    <span>{{ count }}</span>
+    <button v-on:click="count--">-</button>
+    <hr>
+    <button @click="fn()">点击切换隐藏</button>
+    <span v-show="display">哈哈哈</span>
+    <hr>
+    </div>
+    <div class="app1">
+        自动售货机
+        <br>
+        <span>当前余额为：{{money}}</span>
+        <br>
+        <button @click="fn1(5)">橙汁5元</button>
+        <button @click="fn1(3)">可乐3元</button>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script>
+    // v-on
+        // 1.作用：注册事件 = 添加监听 + 提供处理逻辑
+        // 2.语法：
+        //   v-on:事件名 = "内联语句"
+        //   v-on:事件名 = "methods中的函数名"
+        // 简写：@事件名
+        // 注意：methods函数内的this指向Vue实例
+        // 例如：
+        const app = new Vue({
+            el:'.app',
+            data:{
+                count:10,
+                display:true
+            },
+            methods:{
+                fn(){
+                    // this指向当前实例
+                    this.display=!this.display
+
+                }
+            }
+        })
+        const app1 = new Vue({
+            el:'.app1',
+            data:{
+                money:10
+            },
+            methods:{
+                fn1(price){
+                    this.money -=price
+
+                }
+
+            }
+        })
+
+</script>
+</html>
