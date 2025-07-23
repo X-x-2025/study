@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // watch侦听器
+        // 作用：监视数据变化，执行一些业务逻辑或异步操作
+        // 语法：1.简单写法：简单类型数据，直接监视
+        //       2.完整写法：添加额外配置项
+        // 简单写法
+        // watch：{
+        // 数据属性名(newValue,onloadValue){
+            // 一些业务逻辑或异步操作
+        // },
+        // '对象.属性'(newValue,oldValue){
+        // 一些业务逻辑或异步操作}
+        // }
+
+        // 完整写法：添加额外配置项
+        // 1.deep:true 对复杂类型深度监视
+        // 2.immediate:true 初始化立即执行一次handler方法
+        // watch:{
+        //     数据属性名:{
+        //         deep:true,
+        //         handler(newValue){
+        //             console.log(newValue)
+                    
+        //         }
+        //     }
+        // }
+    </script>
+</body>
+</html>

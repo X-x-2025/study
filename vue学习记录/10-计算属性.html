@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 计算属性
+        // 概念：基于现有的数据，计算出来的数据。依赖的数据变化，自动重新计算。
+        // 语法：1.声明在computed配置项中，一个计算属性对应一个函数
+        //      2.使用起来和普通属性一样使用{{计算属性名}}
+        // computed:{
+        // 计算属性名(){
+        // 一段代码逻辑(计算逻辑)
+        // return 结果
+        // }
+        // }
+
+        // computed 计算属性和methods方法的对比
+        // computed 计算属性
+        // 作用：封装了一段对于数据的处理，求的一个结果。
+        // 缓存特性（提升性能）：计算属性会对计算出来的结果缓存，再次使用直接读取缓存，依赖项变化了，会自动重新计算并再次缓存
+
+        // methods 方法
+        // 作用：给实例提供了一个方法。调用以处理业务逻辑
+
+        // 计算属性完整写法
+        // computed:{
+        //     计算属性名:{
+        //         get(){
+        //          一段代码逻辑(计算逻辑)
+        //          return 结果
+        //         },
+        //         set(修改的值){
+        //          一段代码逻辑(修改的逻辑)
+        //         }
+        //     }
+        // }
+
+
+
+
+    </script>
+</body>
+</html>

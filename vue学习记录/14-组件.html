@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 组件注册的两种方式
+        // 1.局部注册：只能在注册的组件内使用
+        //   （1）创建.vue文件
+        //   （2）在使用的组件内导入并注册
+        // 使用：在根组件中
+        // import 组件对象 from '.vue文件对象'
+        // export defailt {
+        // components:{
+        // '组件名':组件对象,
+        // }
+        // }
+        // 2.全局注册：所有组件内都能使用
+        //   （1）创建.vue文件
+        //   （2）main.js中进行全局注册
+        // 使用
+        // 1.导入需要的全局注册的组件
+        // import 组件对象 from '路径'
+        // 2.调用Vue.component进行全局注册
+        // Vue.component('组件名',组件对象)
+
+
+
+        // 组件的样式冲突scoped
+        // 默认情况：写在组件中的样式会全局生效，因此很容易造成多个组件之间的样式冲突问题
+        // 1.全局样式：默认组件中的颜色会作用到全局
+        // 2.局部样式：可以给组件加上scoped属性，可以让样式只作用于当前组件
+
+        // data是一个函数
+        // 一个组件的data选项必须是一个函数。为了保证每个组件实例，维护独立的一份数据对象
+        // 每次创建新的组件实例，都会新执行一次data函数，得到一个新对象
+
+    </script>
+</body>
+</html>

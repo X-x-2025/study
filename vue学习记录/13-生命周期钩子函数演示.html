@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        <h3>{{ title }}</h3>
+        <div>
+            <button @click="count--">-</button>
+            <span>{{ count }}</span>
+            <button @click="count++">+</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        const app = new Vue({
+            el:'.app',
+            data:{
+                count:100,
+                title:'计数器'
+            },
+            // 1.创建阶段（准备数据）
+            beforeCreate(){
+                console.log('beforeCreate  响应式数据准备好之前',this.count);
+                //beforeCreate  响应式数据准备好之前 undefined 此时数据还没准备好
+            },
+            created(){
+                // this.count = 200;
+                // 此时可以开始发送初始化渲染的请求了
+                console.log('created  响应式数据准备好之后 ',this.count);
+                // created  响应式数据准备好之后  100
+            },
+            // 2.挂载阶段（渲染模板）
+            beforeMount() {
+                 console.log('beforeMount  模板渲染之前', document.querySelector('h3').innerHTML);
+                //  beforeMount  模板渲染之前 { { title } } 此时没被渲染
+            },
+            mounted() {
+                 console.log('mounted  模板渲染之后', document.querySelector('h3').innerHTML);
+                //  mounted  模板渲染之后 计数器
+                //  此时可以开始dom了
+            },
+            // 3.更新阶段（修改数据->更新数据）
+            beforeUpdate() {
+                 console.log('beforeUpdate 数据修改了，视图还没更新', document.querySelector('span').innerHTML);
+                //  beforeUpdate 数据修改了，视图还没更新 100
+
+            },
+            updated() {
+                 console.log(' updated  数据修改了，视图更新了', document.querySelector('span').innerHTML);
+                //   updated  数据修改了，视图更新了 101
+
+            },
+            // 4.销毁阶段
+            // 销毁语法：app.$destroy()
+            beforeDestroy() {
+                 console.log('beforeDestroy  销毁前 ');
+
+            },
+            destroyed() {
+                 console.log('destroyed  销毁后 ');
+
+            },
+
+        })
+    </script>
+</body>
+</html>
