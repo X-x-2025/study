@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ref和$refs
+        // 作用：利用ref和$refs可以用于获取dom元素，或者获取组件实例
+        // 特点：查找范围为当前组件内（更加稳定）
+        // 语法：
+        // 1.获取dom
+        // 给目标标签添加ref属性
+        // 例如：<div ref="myDiv">...</div>
+        // 通过this.$refs.myDiv获取到dom元素
+        // 例如：mounted(){
+            // console.log(this.$refs.myDiv) // 可以获取到dom元素
+        // }
+        // 2.获取组件实例
+        // 给目标组件添加ref属性
+        // 例如：<my-component ref="myComponent"></my-component>
+        // 通过this.$refs.myComponent获取到组件实例，就可以调用组件对象里面的方法和属性了
+        // 例如：mounted(){
+            // console.log(this.$refs.myComponent) // 可以获取到组件实例
+        // }
+    </script>
+</body>
+</html>
